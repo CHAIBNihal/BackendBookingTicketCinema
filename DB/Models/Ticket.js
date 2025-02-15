@@ -6,21 +6,30 @@ const TicketSchema = new mongoose.Schema({
         ref: 'User', 
         required: true
     },
-    films: [{
+    filmId: {
         type: String,
         required: true
-    }],
+    },
     email: {
         type: String,
         required: true
     },
-    amount: {
-        type: String,
+    price: {
+        type: Number,
         required: true
     },
     date: {
         type: Date,
         default: Date.now 
+    },
+    
+    statusPayment : {
+        type : String,
+        default : false
+    },
+    quantite : {
+        type : Number, 
+        required : true
     }
 }, { timestamps: true }); 
 
